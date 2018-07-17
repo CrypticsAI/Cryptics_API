@@ -1,6 +1,6 @@
 # Public Cryptics Rest API
 # General API Information
-* The base endpoint is: http://devapi.cryptics.tech
+* The base endpoint is: https://devapi.cryptics.tech
 * All endpoints return either a JSON object or an array.
 * Data is returned in **ascending** order: recent first, latest at the end.
 * All of the time and timestamp related fields are in milliseconds.
@@ -87,7 +87,7 @@ timestamp | 2018-04-09 13:00 | Forecast Generation Time
   }]
 
 ```
-Hourly historical forecasts
+### Hourly historical forecasts
 
 ```
 GET /hourly_history
@@ -118,6 +118,70 @@ GET /hourly_history
 
 ```
 
+
+
+
+### Daily Forecasts 
+
+Daily Forecasts. Currently returns current daily forecast for all forecasted pairs.
+
+**Parameters:**
+
+Param | Example | Description
+------------ | ------------ | ------------
+pair | ETH/USD | Pair form a valid pairs 
+
+
+```
+GET /daily_fcast
+
+```
+**Response:**
+```javascript
+[{
+"timestamp":"2018-07-17",
+"pair":"ETH/USD",
+"fcast":"473.635214647127",
+"price":478.75
+},
+{
+"timestamp":"2018-07-17",
+"pair":"XRP/USD",
+"fcast":"0.472484155946305",
+"price":0.4824
+}]
+
+```
+
+
+
+
+
+### Daily Forecasts Accuracy
+
+Daily Forecasts Accuracy. Currently returns accuracy for all forecasted pairs.
+
+
+```
+GET /daily_stats
+
+```
+**Response:**
+```javascript
+[{
+"asset":"ETH/USD",
+"accuracy":"67.5862068965517"
+},
+{
+"asset":"XRP/USD",
+"accuracy":"69.9300699300699"
+}]
+
+```
+
+
+
+
 ### 4-Hour Ahead Forecast
 ```
 GET /four_hour_fcast
@@ -130,7 +194,7 @@ Historical Data for 4-hour ahead forecasts.
 
 Param | Example | Description
 ------------ | ------------ | ------------
-pair | ETH/BTC | Currently supports only ETH/BTC as pair.
+pair | ETH/BTC | Currently supports only ETC/BTC and LTC/BTC as pairs.
 
 **Returned Values:**
 
