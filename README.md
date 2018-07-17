@@ -14,7 +14,7 @@
 It is important to **NOT** treat this as a failure; the execution status is
 **UNKNOWN** and could have been a success.
 * Any endpoint can retun an ERROR.
-* For all questions regarding api, please, contact: support@cryptics.tech
+* For all questions regarding api, please, contact: support@cryptics.tech   
 
 
 # Public API
